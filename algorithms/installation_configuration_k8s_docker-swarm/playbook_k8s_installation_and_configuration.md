@@ -1,8 +1,8 @@
-# Kubernetes Installation and Configuration Algorithm
+# Kubernetes installation and configuration algorithm
 
-## MASTER
+### Common steps (Kubernetes & Docker-Swarm for manager machine)
 
-1. Initialize master and worker nodes
+1. Initialize manager and worker nodes (hosts: all)
 2. Disable swap and update `/etc/fstab`
 3. Check if `br_netfilter` is enabled
 4. Check if `ip6tables` is set to 1
@@ -18,9 +18,11 @@
 14. Configure systemd cgroup for `containerd`
 15. Start and enable Docker service
 16. Update system packages
+## Divergent steps 
+### Kubernetes 
 17. Install `kubelet` and `kubeadm`
 18. Start `kubelet`
-19. Install `kubectl` on the master node
+19. Install `kubectl` on the manager node
 20. Restart `containerd` service
 21. Initialize cluster using `kubeadm init` with `--pod-network` and API server address
 22. Create `.kube` folder and set permissions to 700
@@ -30,13 +32,15 @@
     kubectl apply -f [podnetwork].yaml
     ```
 
-## SLAVE
+### Slave
 
 1. Join the node:
     ```bash
-    kubeadm join <master-address> --token <token> --discovery-token-ca-cert-hash <hash>
+    kubeadm join <manager-address> \
+     --token <token> \ 
+    --discovery-token-ca-cert-hash <hash>
     ```
-2. Create `.kube` folder and copy `config` from master node (`~/.kube/config`) to allow the slave node to correctly display other nodes in the cluster
+2. Create `.kube` folder and copy `config` from manager node (`~/.kube/config`) to allow the slave node to correctly display other nodes in the cluster
 3. List available nodes in the cluster using:
     ```bash
     kubectl get nodes
