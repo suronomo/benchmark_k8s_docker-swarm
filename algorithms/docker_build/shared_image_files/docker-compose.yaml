@@ -1,0 +1,44 @@
+services:
+  estimation-π_2vCPUs:
+    build: .
+    container_name: estimation-π_2vCPUs
+    environment:
+      - NUM_THREADS=2
+    volumes:
+      - ./results:/workspace/results
+    mem_limit: 1g
+    stdin_open: true
+    tty: true
+
+  estimation-π_4vCPUs:
+    build: .
+    container_name: estimation-π_4vCPUs
+    environment:
+      - NUM_THREADS=4
+    volumes:
+      - ./results:/workspace/results
+    mem_limit: 1g
+    stdin_open: true
+    tty: true
+
+  estimation-π_6vCPUs:
+    build: .
+    container_name: estimation-π_6vCPUs
+    environment:
+      - NUM_THREADS=6
+    volumes:
+      - ./results:/workspace/results
+    mem_limit: 1g
+    stdin_open: true
+    tty: true
+
+  estimation-π_8vCPUs:
+    build: .
+    container_name: estimation-π_8vCPUs
+    environment:
+      - NUM_THREADS=8
+    volumes:
+      - ./results:/workspace/results
+    mem_limit: 1g
+    stdin_open: true
+    tty: true

@@ -12,7 +12,7 @@ This document describes the algorithm for estimating the value of π using a **m
 
 ## 2. Define Program Parameters
 
-- `NUM_THREADS` – number of worker threads  
+- `NUM_THREADS` – number of worker threads (vCPU) 
 - `NUM_SAMPLES` – number of random points per thread  
 - `NUM_EXPERIMENTS` – number of repeated experiments  
 - Enable **logging of results** to file
