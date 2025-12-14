@@ -11,6 +11,3 @@ This folder (`docker_build`) contains all **necessary files and programs to buil
 | `docker_build/docker-swarm` | Contains files and configurations for **building containers** from the Docker images (`shared_image_files`) specifically for _Docker-Swarm_ deployments. |
 | `docker_build/kubernetes` | Contains files and configurations for **building containers** from the Docker images (`shared_image_files`) specifically for _Kubernetes_ deployments. |
 | `Installation_configuration_k8s_docker-swarm` | Contains playbooks and step-by-step algorithms for installing and configuring _Kubernetes_ and _Docker-Swarm_ clusters. Not intended as executable scripts. |
-
-> **Note:**  
-> Programs like the FIO benchmark and `estimation-π.py` are documented in **algorithm form** in `common_programs`. These are **not runnable scripts**, but provide detailed step-by-step procedures for experiments and computations in parallel or clustered environments.

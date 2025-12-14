@@ -16,7 +16,7 @@ services:
     build: .
 
     # Name assigned to the running container instance
-    container_name: estimation-π_2vCPUs
+    container_name: estimation-π_2vCPUs 
 
     # Environment variable(s) passed to the container 
     # (in this case, it specifies the number of threads used to compute the π estimate)
