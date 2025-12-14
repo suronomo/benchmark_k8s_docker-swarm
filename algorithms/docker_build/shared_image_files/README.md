@@ -1,6 +1,6 @@
-# Shared Image Files
+# Shared image files
 
-This folder contains files used to **build the Docker image** for both Kubernetes (K8s) and Docker-Swarm (D-S) deployments. These files are shared across deployment environments and provide a consistent application runtime setup.
+This folder (`shared_image_files`) contains files used to **build the Docker image** for both Kubernetes (K8s) and Docker-Swarm (D-S) deployments. These files are shared across deployment environments and provide a consistent application runtime setup.
 
 ## Files Overview
 
