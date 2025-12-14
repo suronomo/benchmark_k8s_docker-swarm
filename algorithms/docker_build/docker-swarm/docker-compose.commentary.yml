@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  estimation-π_2vCPUs: # Name of the service (used as container name prefix)
+    image: dockerhub_user/estimation-π_2vCPUs # Docker image used to create the container (repository/image_name) f.e. DockerHub
+    deploy:
+      replicas: 2 # Number of container instances to run in the swarm
+      resources:
+        limits: # Resource limits for each container
+          cpu: "2" # Maximum number of CPUs per container
+          memory: 2048M # Maximum memory allocation per container
+    environment:
+      - NUM_THREADS=2 # Number of worker threads used in the π estimation algorithm (Unnecessary for FIO benchmark tests)
+    volumes:
+      - /home/worker1/results_est_π:/workspace/results # Host folder on the local machine mapped to container folder /workspace/results (local:container)
+    ports:
+      - "80:80" # Maps host port 80 to container port 80 (external access)
+    networks:
+      - webnet
+networks:
+  webnet:
+    driver: overlay # Overlay network driver allows multi-host container communication in Docker Swarm (bridge networks are limited to a single host)

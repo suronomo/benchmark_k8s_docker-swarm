@@ -20,6 +20,7 @@ services:
 
     # Environment variable(s) passed to the container 
     # (in this case, it specifies the number of threads used to compute the π estimate)
+    # Note: the 'environment:' parameter is unnecessary for FIO benchmark tests
     environment:
       - NUM_THREADS=2
 

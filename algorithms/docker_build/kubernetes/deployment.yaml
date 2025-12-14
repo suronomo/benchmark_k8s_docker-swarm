@@ -17,7 +17,7 @@ spec:
         image: dockerhub_user/estimation-π_2vCPUs
         env:
         - name: NUM_THREADS
-          value: "4"
+          value: "2"
         volumeMounts:
         - name: results
           mountPath: /workspace/results

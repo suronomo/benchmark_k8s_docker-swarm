@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  estimation-π_2vCPUs:
+    image: dockerhub_user/estimation-π_2vCPUs
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpu: "2"
+          memory: 1024M
+    environment:
+      - NUM_THREADS=2
+    volumes:
+      - /home/worker1/results_est_π:/workspace/results
+    ports:
+      - "80:80"
+    networks:
+      - webnet
+networks:
+  webnet:
+    driver: overlay
