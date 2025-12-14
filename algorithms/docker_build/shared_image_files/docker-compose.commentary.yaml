@@ -1,0 +1,33 @@
+# For educational and portfolio purposes — version with commentary
+
+# ---------------------------------------------------------
+# This Docker Compose file defines and manages multi-container
+# applications. It allows building images, setting environment
+# variables, configuring volumes, and orchestrating services.
+# It is independent of the container orchestration platform
+# and can be used for local development or adapted for Docker-Swarm/K8s.
+# ---------------------------------------------------------
+
+
+services:
+  estimation-π_2vCPUs:
+  # Path to the build context (current folder: .). 
+  # Dockerfile in this folder will be used unless another path is specified.
+    build: .
+
+    # Name assigned to the running container instance
+    container_name: estimation-π_2vCPUs
+
+    # Environment variable(s) passed to the container 
+    # (in this case, it specifies the number of threads used to compute the π estimate)
+    environment:
+      - NUM_THREADS=2
+
+    # Bind mount or volume; maps files/folders from host to container for persistence (./local_directory:container_directory)  
+    volumes:
+      - ./results:/workspace/results
+
+    # Memory limit for the container (e.g., 512m, 1g)
+    mem_limit: 1g
+    
+    ## For 4, 6, and 8 threads, the same comments as for 2 threads apply.

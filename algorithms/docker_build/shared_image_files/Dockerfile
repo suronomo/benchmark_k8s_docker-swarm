@@ -1,8 +1,3 @@
-# This Dockerfile defines the process of building a Docker image.
-# It contains instructions to install the Python runtime environment...
-# ...and prepare the application for execution inside a container.
-
-# Clear version without commentary 
 FROM python:3-alpine
 WORKDIR /workspace
 COPY . /workspace

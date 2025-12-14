@@ -6,14 +6,15 @@ This folder contains files used to **build the Docker image** for both Kubernete
 
 | File | Purpose |
 |------|---------|
-| `Dockerfile` | Clean version of the Dockerfile for building the image. Used directly for building the Docker image. |
-| `Dockerfile.commentary.md` | Dockerfile with step-by-step commentary. Used for documentation and portfolio purposes. Not intended for direct image build. |
+| `Dockerfile` | Defines the steps to build a Docker image. Contains instructions to set up the runtime environment, copy application files, install dependencies, and configure the container. Used directly to create the Docker image. |
+| `Dockerfile.commentary.md` | `Dockerfile.commentary.md` with step-by-step commentary. Used for documentation and portfolio purposes. Not intended for direct image building. |
 | `requ.txt` | Python dependencies required by the application (`estimation-π.py`). Used in the Dockerfile to install packages via pip. |
-| `docker-compose.yaml` | X |
+| `docker-compose.yaml` | Defines build configurations for Docker images. Specifies build context, environment variables, volumes, and resource limits to create container images efficiently for use in multiple deployment environments. |
+| `docker-compose.commentary.yaml` | `docker-compose.yaml` with step-by-step commentary. Used for documentation and portfolio purposes. Not intended for direct image building. |
 > **Note:**  
 > The actual `estimation-π.py` program is documented in algorithm form step-by-step in  
 > `suronomo/algorithms/docker_build/common/pi_estimation_MC-method.md` (restricted due to thesis-related constraints).  
-> It is not a runnable script but provides the detailed procedure for the Monte Carlo π estimation (in cluster computing).
+> It is not a runnable script but provides the detailed procedure for the Monte Carlo π estimation in a parallel or clustered environment.
 
 
 
@@ -21,13 +22,13 @@ This folder contains files used to **build the Docker image** for both Kubernete
 
 ### Build the Docker Image
 
-From this folder, you can build the Docker image using:
+From this folder, you can build Docker images:
 
 ```bash
-For one indepency Docker image:
-docker build -t <name_of_Docker_image>:<tag;version>
-f.e docker build -t estimation_pi_docker:latest
+# Build a single Docker image
+docker build -t <image_name>:<tag_or_version>
+# Example:
+docker build -t estimation_pi_docker:latest
 
-For many Docker images (Docker compose tool):
-docker compose build
-
+# Build multiple Docker images using Docker Compose
+docker-compose build

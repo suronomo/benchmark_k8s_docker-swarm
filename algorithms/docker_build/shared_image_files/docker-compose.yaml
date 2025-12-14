@@ -7,8 +7,6 @@ services:
     volumes:
       - ./results:/workspace/results
     mem_limit: 1g
-    stdin_open: true
-    tty: true
 
   estimation-π_4vCPUs:
     build: .
@@ -18,8 +16,6 @@ services:
     volumes:
       - ./results:/workspace/results
     mem_limit: 1g
-    stdin_open: true
-    tty: true
 
   estimation-π_6vCPUs:
     build: .
@@ -29,8 +25,6 @@ services:
     volumes:
       - ./results:/workspace/results
     mem_limit: 1g
-    stdin_open: true
-    tty: true
 
   estimation-π_8vCPUs:
     build: .
@@ -40,5 +34,4 @@ services:
     volumes:
       - ./results:/workspace/results
     mem_limit: 1g
-    stdin_open: true
-    tty: true
+
