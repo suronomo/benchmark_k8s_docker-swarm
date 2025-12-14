@@ -1,4 +1,4 @@
-# Multithreaded Pi Estimation Algorithm
+# Multithreaded π estimation algorithm
 
 This document describes the algorithm for estimating the value of π using a **multithreaded approach**. The implementation leverages Python's `ThreadPoolExecutor` to parallelize computations and monitors system resource usage during execution.
 
