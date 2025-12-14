@@ -7,7 +7,7 @@ services:
       resources:
         limits:
           cpu: "2"
-          memory: 1024M
+          memory: 2048M
     environment:
       - NUM_THREADS=2
     volumes:
