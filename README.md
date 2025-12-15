@@ -13,7 +13,7 @@ The analysis is conducted across three types of environments:
 The primary objective is to evaluate and compare the effectiveness of resource utilization optimization mechanisms implemented by Kubernetes and Docker Swarm. The study focuses on how efficiently available computational resources are allocated and managed by each orchestrator in both local and cloud-based environments.
 ## 2. Test environment and infrastructure
 ### a) Cluster topology
-![Latency comparison between Kubernetes and Docker Swarm](figures/architecture/cluster_infrastructure.png)
+![Cluster Topology](https://raw.githubusercontent.com/suronomo/benchmark_k8s_docker-swarm/main/figures/architecture/cluster_infrastructure.PNG)
 <div align="center" style="font-size:17px;">
   Figure 1. Cluster topology used in local on-premises and cloud environments
 </div>
